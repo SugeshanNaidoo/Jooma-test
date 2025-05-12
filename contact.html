@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Saahir Jooma Medical Orthotist & Prosthetist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo-container">
+                <img src="imgs/logo/1.png" alt="Joomas Orthotics & Prosthetics Logo" class="logo">
+            </a>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallery & General Info</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="hero" style="background-image: url('imgs/hero/5.jpg');">
+        <div class="container hero-content">
+            <h1>Contact Us</h1>
+            <p>We're here to answer your questions and help you get started</p>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section>
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2>Get In Touch</h2>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3>Our Location</h3>
+                            <p>123 Main Street, Suite 100<br>Anytown, CA 12345</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>Main: (555) 123-4567<br>Fax: (555) 123-4568</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@joomasortho.com<br>appointments@joomasortho.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h3>Business Hours</h3>
+                            <p>Monday - Friday: 8:00 AM - 5:00 PM<br>
+                               Saturday: 9:00 AM - 1:00 PM<br>
+                               Sunday: Closed</p>
+                        </div>
+                    </div>
+                    <div class="social-links" style="margin-top: 2rem;">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h2>Send Us a Message</h2>
+                    <form id="contact-form" action="/api/send" method="POST">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section>
+        <div class="container">
+            <h2 class="text-center">Find Us</h2>
+            <div style="width: 100%; height: 400px; background-color: var(--light-gray); display: flex; align-items: center; justify-content: center;">
+                <p>Map Location: 123 Main Street, Suite 100, Anytown, CA 12345</p>
+                <!-- This is a placeholder for a map. In a real implementation, you would embed a Google Maps iframe or similar here -->
+            </div>
+        </div>
+    </section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div>
+                <img src="imgs/logo/1.png" alt="Joomas Orthotics & Prosthetics Logo" class="footer-logo">
+                <p>Providing quality orthotic and prosthetic care since 2025.</p>
+                <div class="social-links">
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div>
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Suite 100, Anytown, CA 12345</p>
+                <p><i class="fas fa-phone"></i> (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@joomasortho.com</p>
+            </div>
+            <div>
+                <h3>Business Hours</h3>
+                <p>Monday - Friday: 8:00 AM - 5:00 PM</p>
+                <p>Saturday: 9:00 AM - 1:00 PM</p>
+                <p>Sunday: Closed</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Saahir Jooma Medical Orthotist & Prosthetist. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
