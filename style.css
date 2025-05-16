@@ -132,10 +132,24 @@ header {
   width: auto; /* Let width adjust proportionally */
 }
 
-.nav-menu {
-  display: flex;
-  list-style: none;
-}
+  .nav-menu {
+    position: fixed;
+    top: 80px;
+    right: -100%;
+    flex-direction: column;
+    background-color: var(--white);
+    width: 100%;
+    text-align: center;
+    transition: var(--transition);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    height: auto; /* Changed from fixed height to auto */
+    max-height: 80vh; /* Added max-height instead of fixed height */
+    overflow-y: auto;
+    /* Center menu items both horizontally and vertically */
+    justify-content: center;
+    align-items: center;
+  }
 
 .nav-menu li {
   margin-left: 1.5rem;
