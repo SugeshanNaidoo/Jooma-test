@@ -159,7 +159,7 @@ function showToast(message, type) {
   }, 5300); // Animation takes 5s + 300ms extra
 }
 
-// Modify the contact form submission handler to use the toast notification
+// contact form submission handler to use the toast notification
 document.addEventListener('DOMContentLoaded', function () {
   const contactForm = document.getElementById('contact-form');
 

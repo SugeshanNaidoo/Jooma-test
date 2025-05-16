@@ -737,3 +737,36 @@ html, body {
     opacity: 0;
   }
 }
+
+/* Media query for services page layout on smaller screens */
+@media (max-width: 768px) {
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* This reverses the order for sections where image is first */
+  #prosthetics .about-grid, 
+  #pediatric .about-grid, 
+  #fabrication .about-grid {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #prosthetics .about-grid > div:first-child,
+  #pediatric .about-grid > div:first-child,
+  #fabrication .about-grid > div:first-child {
+    order: 1; /* Move image below text */
+  }
+  
+  /* Adjust spacing */
+  .about-grid > div {
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Position the button at the bottom */
+  .about-grid .btn {
+    margin-top: 1.5rem;
+    display: inline-block;
+  }
+}
