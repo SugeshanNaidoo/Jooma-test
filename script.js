@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Add this to your script.js or create a new gallery.js file to include in gallery.html
+// lightbox creation
 document.addEventListener('DOMContentLoaded', function() {
     // Get all gallery images
     const galleryImages = document.querySelectorAll('.gallery-image');
@@ -167,18 +167,38 @@ document.addEventListener('DOMContentLoaded', function () {
     contactForm.addEventListener('submit', async function (event) {
       event.preventDefault();
 
+      const name = contactForm.name.value.trim();
+      const email = contactForm.email.value.trim();
+      const phone = contactForm.phone.value.trim();
+      const subject = contactForm.subject.value.trim();
+      const message = contactForm.message.value.trim();
+
+      // Input validation
+      const nameHasNumbers = /\d/.test(name);
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      const phoneHasLetters = /[a-zA-Z]/.test(phone);
+
+      if (nameHasNumbers) {
+        showToast('Name cannot contain numbers.', 'error');
+        return;
+      }
+
+      if (!emailValid) {
+        showToast('Please enter a valid email address.', 'error');
+        return;
+      }
+
+      if (phoneHasLetters) {
+        showToast('Phone number cannot contain letters.', 'error');
+        return;
+      }
+
       const submitButton = contactForm.querySelector('button[type="submit"]');
       const originalText = submitButton.innerHTML;
       submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
       submitButton.disabled = true;
 
-      const formData = {
-        name: contactForm.name.value,
-        email: contactForm.email.value,
-        phone: contactForm.phone.value,
-        subject: contactForm.subject.value,
-        message: contactForm.message.value
-      };
+      const formData = { name, email, phone, subject, message };
 
       try {
         const res = await fetch('/api/send', {
