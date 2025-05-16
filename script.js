@@ -207,31 +207,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
-
-// Mobile Menu JavaScript
-document.addEventListener('DOMContentLoaded', function() {
-    const mobileMenuOpen = document.getElementById('mobile-menu-open');
-    const mobileMenuClose = document.getElementById('mobile-menu-close');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    // Open mobile menu
-    mobileMenuOpen.addEventListener('click', function() {
-        mobileMenu.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling when menu is open
-    });
-    
-    // Close mobile menu
-    mobileMenuClose.addEventListener('click', function() {
-        mobileMenu.classList.remove('active');
-        document.body.style.overflow = ''; // Re-enable scrolling
-    });
-    
-    // Close menu when clicking on a link (for single page navigation)
-    const navLinks = mobileMenu.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            mobileMenu.classList.remove('active');
-            document.body.style.overflow = ''; // Re-enable scrolling
-        });
-    });
-});
