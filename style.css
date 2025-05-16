@@ -577,7 +577,7 @@ footer {
 
   .nav-menu {
     position: fixed;
-    top: 80px;
+    top: 70px;
     right: -100%;
     flex-direction: column;
     background-color: var(--white);
