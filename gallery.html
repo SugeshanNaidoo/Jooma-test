@@ -9,23 +9,46 @@
 </head>
 <body>
     <!-- Header -->
-    <header>
-        <div class="container header-container">
-            <a href="index.html" class="logo-container">
-                <img src="imgs/logo/1.png" alt="Joomas Orthotics & Prosthetics Logo" class="logo">
-            </a>
-            <button class="mobile-menu-btn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="gallery.html" class="active">Gallery & General Info</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </div>
-    </header>
+<header class="header">
+  <div class="container header-container">
+    <a href="index.html" class="logo">
+      <img src="imgs/logo/1.png" alt="Logo" class="logo">
+    </a>
+
+    <nav class="desktop-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <a href="services.html" class="nav-link">Services</a>
+      <a href="gallery.html" class="nav-link">Gallery & General Info</a>
+      <a href="contact.html" class="nav-link">Contact</a>
+    </nav>
+
+    <button id="mobile-menu-button" class="mobile-menu-button">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-nav">
+      <div class="mobile-nav-header">
+        <a href="index.html" class="logo mobile-logo">
+          <img src="imgs/logo/1.png" alt="Logo" class="logo">
+        </a>
+        <button id="mobile-menu-close" class="mobile-menu-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="gallery.html" class="nav-link">Gallery & General Info</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </div>
+</header>
 
     <!-- Gallery Hero Section -->
     <section class="hero" style="background-image: url('imgs/hero/4.png');">
