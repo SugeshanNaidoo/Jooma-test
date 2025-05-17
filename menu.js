@@ -10,7 +10,6 @@ const toastMessage = document.getElementById('toast-message');
 // Initialize on DOM content loaded
 document.addEventListener('DOMContentLoaded', function() {
   initMobileMenu();
-  initContactForm();
   initScrollAnimations();
   initMap();
 });
