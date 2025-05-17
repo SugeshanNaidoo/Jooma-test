@@ -1,50 +1,74 @@
-// Wait for the DOM to be fully loaded
+// DOM Elements
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenuClose = document.getElementById('mobile-menu-close');
+const mobileMenu = document.getElementById('mobile-menu');
+const contactForm = document.getElementById('contact-form');
+const submitButton = document.getElementById('submit-button');
+const toast = document.getElementById('toast');
+const toastMessage = document.getElementById('toast-message');
+
+// Initialize on DOM content loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Get references to the menu button and navigation menu
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
-    const navMenu = document.querySelector('.nav-menu');
-    
-    // Toggle the 'active' class on the navigation menu when the menu button is clicked
-    mobileMenuBtn.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-        
-        // Change the icon based on the menu state
-        const icon = mobileMenuBtn.querySelector('i');
-        if (navMenu.classList.contains('active')) {
-            icon.classList.remove('fa-bars');
-            icon.classList.add('fa-times');
-        } else {
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
+  initMobileMenu();
+  initContactForm();
+  initScrollAnimations();
+  initMap();
+});
+
+// Mobile Menu Functionality
+function initMobileMenu() {
+  if (!mobileMenuButton || !mobileMenu) return;
+
+  mobileMenuButton.addEventListener('click', toggleMobileMenu);
+  
+  // Close button for mobile menu
+  if (mobileMenuClose) {
+    mobileMenuClose.addEventListener('click', closeMobileMenu);
+  }
+
+  // Close mobile menu when clicking on a link
+  const mobileLinks = mobileMenu.querySelectorAll('a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', function(event) {
+    if (mobileMenu.classList.contains('active') && 
+        !mobileMenu.contains(event.target) && 
+        event.target !== mobileMenuButton &&
+        !mobileMenuButton.contains(event.target)) {
+      closeMobileMenu();
+    }
+  });
+}
+
+function toggleMobileMenu() {
+  mobileMenu.classList.toggle('active');
+}
+
+function closeMobileMenu() {
+  mobileMenu.classList.remove('active');
+}
+
+// Smooth Scrolling for Anchor Links
+function initSmoothScrolling() {
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const targetId = this.getAttribute('href');
+      if (targetId && targetId !== "#") {
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80, // Offset for fixed header
+            behavior: 'smooth'
+          });
         }
+      }
     });
-    
-    // Close the menu when clicking outside of it
-    document.addEventListener('click', function(event) {
-        const isClickInside = navMenu.contains(event.target) || mobileMenuBtn.contains(event.target);
-        
-        if (!isClickInside && navMenu.classList.contains('active')) {
-            navMenu.classList.remove('active');
-            
-            // Reset the icon
-            const icon = mobileMenuBtn.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        }
-    });
-    
-    // Close the menu when a menu item is clicked
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            navMenu.classList.remove('active');
-            
-            // Reset the icon
-            const icon = mobileMenuBtn.querySelector('i');
-            icon.classList.remove('fa-times');
-            icon.classList.add('fa-bars');
-        });
-    });
+  });
+}
     
     // Close the menu when window is resized to desktop size
     window.addEventListener('resize', function() {
