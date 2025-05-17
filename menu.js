@@ -6,7 +6,6 @@ const mobileMenu = document.getElementById('mobile-menu');
 // Initialize on DOM content loaded
 document.addEventListener('DOMContentLoaded', function() {
   initMobileMenu();
-  initMap();
 });
 
 // Mobile Menu Functionality
