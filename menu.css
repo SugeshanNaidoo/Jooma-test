@@ -84,7 +84,6 @@
   padding: 0.5rem 0;
 }
 
-// responsive styles //
 
 @media (min-width: 768px) {
   .desktop-nav {
