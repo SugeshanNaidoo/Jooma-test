@@ -2,10 +2,6 @@
 const mobileMenuButton = document.getElementById('mobile-menu-button');
 const mobileMenuClose = document.getElementById('mobile-menu-close');
 const mobileMenu = document.getElementById('mobile-menu');
-const contactForm = document.getElementById('contact-form');
-const submitButton = document.getElementById('submit-button');
-const toast = document.getElementById('toast');
-const toastMessage = document.getElementById('toast-message');
 
 // Initialize on DOM content loaded
 document.addEventListener('DOMContentLoaded', function() {
