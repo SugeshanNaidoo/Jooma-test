@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /private/
 Allow: /
 
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://www.saahirjooma.co.za/sitemap.xml
