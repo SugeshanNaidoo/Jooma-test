@@ -572,6 +572,7 @@ footer {
 }
 
 .footer-logo {
+  filter: brightness(0) invert(1);
   height: 80px;
   width: auto;
   margin-bottom: 1rem;
